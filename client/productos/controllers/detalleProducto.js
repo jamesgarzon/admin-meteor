@@ -1,5 +1,4 @@
-  // Controlador de detalleProducto
-  angular.module("admin").controller("DetalleProductoCtrl", ['$scope', '$stateParams','$meteor',
+angular.module("admin").controller("DetalleProductoCtrl", ['$scope', '$stateParams','$meteor',
   function($scope, $stateParams, $meteor){
 
     $scope.productoId = $stateParams.productoId;

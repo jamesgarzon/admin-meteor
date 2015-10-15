@@ -1,4 +1,3 @@
-// Controllador de listarProductos
 angular.module('admin').controller('ListaProductosCtrl', ['$scope','$meteor','$log', function($scope,$meteor,$log){
 
   $scope.productos = $meteor.collection(Productos);

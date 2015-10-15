@@ -1,5 +1,5 @@
 <!-- Formulario para agregar productos -->
-<form  ng-submit="productos.save(nuevoProducto); nuevoProducto='';" class="form-horizontal">
+<form  ng-submit="nuevoProducto.propietario = $root.currentUser._id; productos.save(nuevoProducto);" class="form-horizontal">
   <fieldset>
 
     <!-- Form Name -->
@@ -7,7 +7,7 @@
 
     <!-- Código-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="CodigoInput">*Cógido</label>
+      <label class="col-md-4 control-label" for="CodigoInput">*Códido</label>
       <div class="col-md-4">
         <input ng-model="nuevoProducto.Codigo" id="CodigoInput" name="CodigoInput" type="text" placeholder="123456789" class="form-control input-md" required>
       </div>
