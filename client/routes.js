@@ -2,7 +2,6 @@ angular.module('admin').config(['$urlRouterProvider', '$stateProvider', '$locati
 function($urlRouterProvider, $stateProvider, $locationProvider){
 
   $locationProvider.html5Mode(true);
-
   $stateProvider
   .state('producto', {
     url: '/productos',
