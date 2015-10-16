@@ -64,6 +64,15 @@
   </fieldset>
 </form>
 
+<!-- Filtros -->
+<div>
+    <select ng-model="ordenDePropiedad">
+      <option value="1">Ascending</option>
+      <option value="-1">Descending</option>
+    </select>
+  </div>
+
+
 <div class="panel panel-primary">
   <!-- Default panel contents -->
   <div class="panel-heading"><h5>MIS PRODUCTOS</h5></div>
@@ -81,7 +90,9 @@
         <td>Costo</td>
         <td></td>
       </thead>
-      <tbody ng-repeat="producto in productos">
+      <!-- <li dir-paginate="party in parties | itemsPerPage: perPage" total-items="partiesCount.count"> -->
+
+      <tbody dir-paginate="producto in productos | itemsPerPage: porPagina" total-items="cantidadDeProductos.count">
         <td>{{$index}}</td>
         <td><a href="/productos/{{producto._id}}">{{producto.Codigo}}</a></td>
         <td> {{producto.Descripcion}}</td>
@@ -94,3 +105,4 @@
     </table>
   </div>
 </div>
+<dir-pagination-controls on-page-change="paginaCambiada(newPageNumber)"></dir-pagination-controls>

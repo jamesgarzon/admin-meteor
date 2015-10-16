@@ -63,3 +63,10 @@
 
   </fieldset>
 </form>
+
+<ul>
+  Users:
+  <li ng-repeat="user in users">
+    <div>{{ user.emails[0].address }}</div>
+  </li>
+</ul>

@@ -3,7 +3,9 @@ angular.module("admin").controller("DetalleProductoCtrl", ['$scope', '$statePara
 
     $scope.productoId = $stateParams.productoId;
     // el parametro de false, se usa para indicar que no se hagan los cambios automaticos a medida que editan el producto
-    $scope.producto = $meteor.object(Productos, $stateParams.productoId,false);
+    $scope.producto = $meteor.object(Productos, $stateParams.productoId,false).subscribe('productos');
+    // el false es para evitar cambiar el usuario desde el cliente
+    $scope.users = $meteor.collection(Meteor.users, false).subscribe('users');
 
     $scope.guardar = function () {
       $scope.producto.save().then(function(numeroDeDocumentos){
