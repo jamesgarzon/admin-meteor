@@ -5,6 +5,7 @@ angular.module("admin").run(['$rootScope', '$state', function($rootScope, $state
     if (error === 'AUTH_REQUIRED') {
       $state.go('producto');
     }
+
   });
 }]);
 
@@ -27,6 +28,14 @@ function($urlRouterProvider, $stateProvider, $locationProvider){
         return $meteor.requireUser();
       }]
     }
+    // resolve: {
+    //    "currentUser": ["$meteor", function($meteor){
+    //      return $meteor.requireValidUser(function(user) {
+    //        alert(JSON.stringify(user));
+    //        return user._id== "Eijyc8xR57XCCnRtA";
+    //      });
+    //    }]
+    //  }
   });
 
   $urlRouterProvider.otherwise("/productos");

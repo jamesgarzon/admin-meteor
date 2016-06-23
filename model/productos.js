@@ -1,5 +1,4 @@
 Productos = new Mongo.Collection("productos");
-
 Productos.allow({
   insert: function(userId, producto){
     return userId && producto.propietario === userId;
